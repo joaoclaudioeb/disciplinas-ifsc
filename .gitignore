@@ -1,0 +1,29 @@
+
+# Arquivos auxiliares do LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb
+
+# Latexmk temp files
+*.dvi
+*.xdv
+*.ps
+
+# Ignorar backups de editores
+*~
+*.bak
+*.swp
+
+# Ignorar executaveis
+*.out
