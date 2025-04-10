@@ -19,6 +19,7 @@
 *.dvi
 *.xdv
 *.ps
+*.tmp.md
 
 # Ignorar backups de editores
 *~

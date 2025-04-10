@@ -9,7 +9,7 @@
 
 <p align="center">
     <a href="#"><img alt="Status" src="https://img.shields.io/badge/Status-Ativo-green"></a>
-    <a href="https://github.com/joaoclaudioeb/ifsc-disciplines/commits/main"><img alt="Last commit" src="https://img.shields.io/github/last-commit/joaoclaudioeb/ifsc-disciplines?label=Última%20atualização&color=blue"></a>
+    <a href="https://github.com/joaoclaudioeb/ifsc-disciplines/commits/main"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/joaoclaudioeb/ifsc-disciplines/main?path=emb22109&label=%C3%9Altima%20atualiza%C3%A7%C3%A3o&color=blue"></a>
     <a href="https://github.com/joaoclaudioeb/disciplinas-ifsc/issues/new?labels=question&title=EMB22109%20-%20"><img alt="Dúvidas" src="https://img.shields.io/badge/Dúvidas-Clique%20aqui-yellow"></a>
 </p>
 
