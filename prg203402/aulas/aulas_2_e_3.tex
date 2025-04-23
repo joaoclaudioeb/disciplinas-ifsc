@@ -1,0 +1,553 @@
+\documentclass{beamer}
+
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes, arrows, positioning}
+
+\usepackage{tabularray}
+    \UseTblrLibrary{booktabs}
+    \DefTblrTemplate{contfoot-text}{normal}{\lang{(Continued on next page)}{(Continua na próxima página)}} 
+    \SetTblrTemplate{contfoot-text}{normal} 
+    \DefTblrTemplate{conthead-text}{normal}{\lang{(continued)}{(continuação)}} 
+    \SetTblrTemplate{conthead-text}{normal}
+
+\usepackage{enumitem}
+\definecolor{ifscgreen}{RGB}{50,93,61}
+
+\setlist[enumerate,1]{label=\colorbox{ifscgreen}{\textcolor{white}{\arabic*}}\quad, leftmargin=*}
+\setlist[enumerate,2]{label=\colorbox{ifscgreen!70}{\textcolor{white}{\arabic{enumi}.\arabic*}}\quad, leftmargin=*}
+\setlist[enumerate,3]{label=\colorbox{ifscgreen!40}{\textcolor{white}{\arabic{enumi}.\arabic{enumii}.\arabic*}}\quad, leftmargin=*}
+% ------------------------------
+% Codificação e idioma
+% ------------------------------
+% \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+
+% ------------------------------
+% Matemática e símbolos
+% ------------------------------
+\usepackage{amsmath}
+
+% ------------------------------
+% Gráficos e figuras
+% ------------------------------
+\usepackage{graphicx}
+\usepackage{subfigure}
+
+% ------------------------------
+% Cores, URL e hiperlinks
+% ------------------------------
+\usepackage{url,color}
+\usepackage{hyperref}
+\hypersetup{
+    pdfstartview={Fit},
+    pdftitle={\@title},
+    pdfsubject={Engenharia de Telecomunicacoes - IFSC},
+    pdfauthor={\@author}
+}
+
+% ------------------------------
+% Listagens e pseudocódigo
+% ------------------------------
+\usepackage[
+  plainruled,
+  noline
+]{algorithm2e}
+
+% ------------------------------
+% Bibliografia
+% ------------------------------
+\usepackage[backend=biber,style=numeric,citestyle=ieee]{biblatex}
+\addbibresource{references.bib}
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+
+% ------------------------------
+% Outros pacotes
+% ------------------------------
+\usepackage{ifsc} % (pacote personalizado, ok manter)
+
+% ------------------------------
+% Macros e comandos personalizados
+% ------------------------------
+\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+
+\newcommand{\DAY}{\the\day}
+\newcommand{\MONTH}{%
+    \ifcase\the\month
+    \or Janeiro%
+    \or Fevereiro%
+    \or Março%
+    \or Abril%
+    \or Maio%
+    \or Junho%
+    \or Julho%
+    \or Agosto%
+    \or Setembro%
+    \or Outubro%
+    \or Novembro%
+    \or Dezembro%
+    \fi}
+\newcommand{\YEAR}{\the\year}
+
+% ------------------------------
+% Dados do título
+% ------------------------------
+\title{PRG203402 - Lógica de Programação:}
+\subtitle{\LARGE Algoritmos e Métodos para Representá-los}
+\author{João Cláudio Elsen Barcellos}
+\date{\scriptsize \DAY~de \MONTH~de \YEAR}
+\institute{
+    Engenheiro Eletricista\\
+    Formado na Universidade Federal de Santa Catarina\\
+    campus Florianópolis\\
+    \url{joaoclaudiobarcellos@gmail.com}
+}
+
+% ------------------------------
+% Customização das seções no Beamer
+% ------------------------------
+\def\sectionname{}
+\def\insertsectionnumber{}
+\def\subsectionname{}
+\def\insertsubsectionnumber{}
+
+\AtBeginSection[]{
+  \begin{frame}
+      \vfill
+      \centering
+      \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+          \usebeamerfont{title}\insertsectionhead\par%
+      \end{beamercolorbox}
+      \vfill
+  \end{frame}
+}
+
+\setbeamertemplate{caption}[numbered]
+
+% ------------------------------
+% Controle de idioma
+% ------------------------------
+\usepackage{ifthen}
+\newboolean{english}
+\setboolean{english}{false} % true = inglês, false = português
+
+% Configuração de idioma e títulos
+\ifthenelse{\boolean{english}}{
+  \usepackage[english]{babel}
+  \renewcommand{\figurename}{Figure}
+  \renewcommand{\tablename}{Table}
+  \SetAlgorithmName{Algorithm}{}{}
+
+  \SetKwInput{KwData}{Input}
+  \SetKwInput{KwResult}{Output}
+  \SetKwIF{If}{ElseIf}{Else}{if}{then}{else if}{else}{end if}
+  \SetKwFor{While}{while}{do}{end while}
+  \SetKwFor{For}{for}{do}{end for}
+  \SetKw{Return}{return}
+}{
+  \usepackage[brazil]{babel}
+  \renewcommand{\figurename}{Figura}
+  \renewcommand{\tablename}{Tabela}
+  \SetAlgorithmName{Algoritmo}{}{}
+
+  \SetKwInput{KwData}{Entrada}
+  \SetKwInput{KwResult}{Saída}
+  \SetKwIF{If}{ElseIf}{Else}{se}{então}{senão se}{senão}{fim}
+  \SetKwFor{While}{enquanto}{faça}{fim}
+  \SetKwFor{For}{para}{faça}{fim}
+  \SetKw{Return}{retorna}
+}
+% Comando para alternar entre idiomas (inglês/português)
+\newcommand{\lang}[2]{\ifbool{english}{#1}{#2}}
+
+\begin{document}
+
+\captionsetup{labelformat=empty}
+
+\begin{frame}[t]
+    % Example of a note:
+    % \note{Boa tarde a todos, na aula de hoje iremos estudar os circuitos sequenciais...}
+    \maketitle
+    \vspace{-1cm}
+    \begin{flushleft}
+        \vfill
+        \textit{\tiny $^{*}$Créditos ao Prof. Emerson Ribeiro de Mello, o qual criou e disponibilizou o template aqui usado, via ShareLaTeX}\par
+        \textit{\tiny $^{**}$Créditos ao Prof. Renan Augusto Starke, o qual forneceu parte do conteúdo usado nesta apresentação}
+    \end{flushleft}
+\end{frame}
+
+\begin{frame}[t]{Na aula de hoje veremos...}
+    \tableofcontents
+\end{frame}
+
+\section{Lógica de programação e algoritmos}
+\begin{frame}{Lógica de programação e algoritmos}
+    \begin{alertblock}{Lógica de programação:}
+        A técnica de \textbf{encadear pensamentos/instruções} para atingir determinado objetivo.
+    \end{alertblock}   
+    \begin{alertblock}{Algoritmo:}
+        Formalmente, é uma sequência finita de passos que levam à execução de uma tarefa. 
+    \end{alertblock}
+\end{frame}
+
+\section{Algoritmos}
+\begin{frame}{Algoritmos}
+    
+    \small 
+    
+    Tarefas cotidianas:
+
+    \begin{enumerate}
+        \item Fazer um sanduíche;
+        \item Trocar uma lâmpada;
+        \item Receitas...
+    \end{enumerate}
+
+    Problemas mais complexos e/ou que podem ser automatizados:
+
+    \begin{enumerate}
+        \item Cálculo da sequencia de Fibonacci;
+        \item Ordenação de números;
+        \item Resolução numérica de equações diferenciais;
+        \item Solução de circuitos;
+        \item Entre muitas outras...
+    \end{enumerate} 
+\end{frame}
+
+\begin{frame}{Estruturas de decisão}
+    
+    \small
+
+    Fazer café:
+
+    \begin{enumerate}
+        \item Pegue a cafeteira
+        \item Se cafeteira suja:
+        \begin{enumerate}
+            \item Limpar cafeteira
+        \end{enumerate}
+        \item Pegue o pó
+        \item Pegue o filtro
+        \item Complete a cafeteira com água até o nível permitido
+        \item Coloque 2 colheres de pó
+        \item Ligue a cafeteira
+        \item Beba!
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Estruturas de repetição e decisão}
+    
+    \small
+
+    Fazer café (na cafeteria):
+
+    \begin{enumerate}
+        \item Aguardando novo cliente
+        \item Se houver café pronto:
+        \begin{enumerate}
+            \item Servir cliente!
+            \item Ir para passo 1
+        \end{enumerate}
+        \item Senão:
+        \begin{enumerate}
+            \item Se cafeteira suja:
+            \begin{enumerate}
+                \item Limpar cafeteira
+            \end{enumerate}
+            \item Pegue pó
+            \item Pegue o filtro
+            \item Complete a cafeteira com água até o nível permitido
+            \item Coloque 2 colheres de pó
+            \item Ligue a cafeteira
+            \item Aguardar
+            \item Ir para passo 2.1
+        \end{enumerate}
+    \end{enumerate}
+\end{frame}
+
+\section{Métodos de representação de algoritmos}
+\begin{frame}{Métodos de representação de algoritmos}
+    
+    \small
+
+    Há diversas formas de representar um algorítmo:
+
+    \begin{enumerate}
+        \item ``Linguagem natural'' (e.g., por meio de descrição, similar ao exemplo do café);
+        \item Fluxogramas;
+        \item Diagramas de Chapin (Nassi–Shneiderman);
+        \item Pseudocódigo.
+    \end{enumerate}
+\end{frame}
+
+\subsection{Fluxograma}
+\begin{frame}[fragile]{Principais símbolos de fluxograma}
+    \centering
+    \makebox[\linewidth]{% <-- centraliza horizontalmente a tabela
+      \resizebox{0.8\linewidth}{!}{%
+        \begin{tblr}[
+          caption = {Principais símbolos usados em fluxogramas}, 
+          label = {tab:fluxo_simbolos}
+          ]
+          {
+          colspec = {X[c,m,1.2] X[l,m,2.5] X[l,m,4]},
+          cells = {font = \fontsize{9pt}{11pt}\selectfont},
+          rowhead = 1
+          }
+          \toprule
+          \textbf{Símbolo} & \textbf{Nome} & \textbf{Descrição} \\
+          \midrule
+          \tikz\node[draw, rectangle, minimum width=1cm, minimum height=0.7cm, fill=blue!20]{}; & Processo & Representa uma instrução ou ação a ser executada \\
+          \tikz\node[draw, ellipse, minimum width=1cm, minimum height=0.7cm, fill=green!20]{}; & Início / Fim & Indica o ponto de entrada ou término do algoritmo \\
+          \tikz\node[draw, diamond, aspect=2, minimum width=1cm, minimum height=0.7cm, fill=blue!20]{}; & Decisão & Representa uma escolha condicional (ex: if, while) \\
+          \tikz\node[draw, trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=1cm, minimum height=0.7cm, fill=blue!20]{}; & Entrada / Saída & Indica leitura ou escrita de dados \\
+          \tikz\draw[->, thick, color=black] (0,0) -- (0.5,0); & Seta / Fluxo & Mostra o fluxo de execução entre os blocos \\
+          \bottomrule
+        \end{tblr}%
+      }%
+    }
+\end{frame}
+
+\begin{frame}[fragile]{Exemplo: Fazer café}
+    \centering
+    \begin{figure}[!ht]
+        \centering
+        \label{fig:fluxo_cafe}
+        \resizebox{0.4\textwidth}{!}{
+          \begin{tikzpicture}[
+              node distance=1.2cm,
+              every node/.style={font=\scriptsize},
+              align=center
+              ]
+              \node (start) [draw, ellipse, fill=green!20, minimum width=1.2cm, minimum height=0.8cm] {Início};
+              \node (check) [draw, diamond, below of=start, fill=blue!20, inner sep=0cm, yshift=-0.4cm] {Cafeteira\\limpa?};
+              \node (clean) [draw, rectangle, right of=check, xshift=3cm, fill=blue!20, minimum width=1.2cm, minimum height=0.8cm] {Limpar\\cafeteira};
+              \node (fill) [draw, rectangle, below of=check, yshift=-0.8cm, fill=blue!20, minimum width=1.2cm, minimum height=0.8cm] {Adicionar\\água e pó};
+              \node (on) [draw, rectangle, below of=fill, fill=blue!20, minimum width=1.2cm, minimum height=0.8cm] {Ligar\\cafeteira};
+              \node (drink) [draw, rectangle, below of=on, fill=blue!20, minimum width=1.2cm, minimum height=0.8cm] {Beber\\café};
+              \node (end) [draw, ellipse, below of=drink, fill=green!20, minimum width=1.2cm, minimum height=0.8cm] {Fim};
+
+              \draw[->] (start) -- (check);
+              \draw[->] (check) -- node[above] {não} (clean);
+              \draw[->] (clean) |- (fill);
+              \draw[->] (check) -- node[left] {sim} (fill);
+              \draw[->] (fill) -- (on);
+              \draw[->] (on) -- (drink);
+              \draw[->] (drink) -- (end);
+          \end{tikzpicture}
+        }
+    \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Exemplo: Trocar lâmpada}
+    \centering
+    \begin{figure}[!ht]
+        \centering
+        \label{fig:fluxo_lampada}
+        \resizebox{0.65\textwidth}{!}{
+          \begin{tikzpicture}[
+              node distance=1.2cm,
+              every node/.style={font=\scriptsize},
+              align=center
+              ]
+              \node (start) [draw, ellipse, fill=green!20, minimum width=1.2cm, minimum height=0.8cm] {Início};
+              \node (switch) [draw, rectangle, below of=start, fill=blue!20, minimum width=1.2cm, minimum height=0.8cm] {Acionar\\interruptor};
+              \node (light) [draw, diamond, below of=switch, fill=blue!20, inner sep=0cm, yshift=-0.4cm] {Lâmpada\\acendeu?};
+              \node (end) [draw, ellipse, right of=light, xshift=3.5cm, fill=green!20, minimum width=1.2cm, minimum height=0.8cm] {Fim};
+              \node (replace) [draw, rectangle, below of=light, yshift=-0.8cm, fill=blue!20, minimum width=1.2cm, minimum height=0.8cm] {Trocar\\lâmpada};
+
+              \draw[->] (start) -- (switch);
+              \draw[->] (switch) -- (light);
+              \draw[->] (light) -- node[above] {sim} (end);
+              \draw[->] (light) -- node[left] {não} (replace);
+              \draw[->] (replace.west) -- ++(-1,0) |- (switch.west);
+          \end{tikzpicture}
+        }
+    \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Exemplo: Sair de casa com guarda-chuva}
+    \centering
+    \begin{figure}[!ht]
+        \centering
+        \label{fig:fluxo_guarda_chuva}
+        \resizebox{0.5\textwidth}{!}{
+          \begin{tikzpicture}[
+              node distance=1.2cm,
+              every node/.style={font=\scriptsize},
+              align=center
+              ]
+              \node (start) [draw, ellipse, fill=green!20, minimum width=1.2cm, minimum height=0.8cm] {Início};
+              \node (check) [draw, diamond, below of=start, fill=blue!20, inner sep=0cm, yshift=-0.4cm] {Vai\\chover?};
+              \node (take) [draw, rectangle, right of=check, xshift=3cm, fill=blue!20, minimum width=1.2cm, minimum height=0.8cm] {Pegar\\guarda-chuva};
+              \node (go) [draw, rectangle, below of=check, yshift=-0.8cm, fill=blue!20, minimum width=1.2cm, minimum height=0.8cm] {Sair\\de casa};
+              \node (end) [draw, ellipse, below of=go, fill=green!20, minimum width=1.2cm, minimum height=0.8cm] {Fim};
+
+              \draw[->] (start) -- (check);
+              \draw[->] (check) -- node[above] {sim} (take);
+              \draw[->] (take) |- (go);
+              \draw[->] (check) -- node[left] {não} (go);
+              \draw[->] (go) -- (end);
+          \end{tikzpicture}
+        }
+    \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Exemplo: Cálculo de média e aprovação}
+    \centering
+    \begin{figure}[!ht]
+        \centering
+        \label{fig:fluxo_media_aprovacao}
+        \resizebox{0.8\textwidth}{!}{
+          \begin{tikzpicture}[
+              node distance=1.2cm and 2cm,
+              every node/.style={font=\scriptsize},
+              align=center
+              ]
+              \node (start) [draw, ellipse, fill=green!20, minimum width=1.2cm, minimum height=0.8cm] {Início};
+              \node (read) [draw, trapezium, trapezium left angle=70, trapezium right angle=110, below of=start, fill=blue!20, minimum width=1.2cm, minimum height=0.8cm] {Leia\\N1, N2};
+              \node (calc) [draw, rectangle, below of=read, fill=blue!20, minimum width=1.2cm, minimum height=0.8cm] {media =\\(N1 + N2)/2};
+              \node (check) [draw, diamond, below of=calc, fill=blue!20, inner sep=0cm, yshift=-0.4cm] {media $\geq$\\6?};
+              \node (approved) [draw, trapezium, trapezium left angle=70, trapezium right angle=110, right of=check, xshift=3cm, fill=blue!20, minimum width=1.2cm, minimum height=0.8cm] {Aprovado!};
+              \node (recovery) [draw, trapezium, trapezium left angle=70, trapezium right angle=110, left of=check, xshift=-3cm, fill=blue!20, minimum width=1.2cm, minimum height=0.8cm] {Recuperação!};
+              \node (end) [draw, ellipse, below of=check, yshift=-2.5cm, fill=green!20, minimum width=1.2cm, minimum height=0.8cm] {Fim};
+
+              \draw[->] (start) -- (read);
+              \draw[->] (read) -- (calc);
+              \draw[->] (calc) -- (check);
+              \draw[->] (check) -- node[above] {sim} (approved);
+              \draw[->] (check) -- node[above] {não} (recovery);
+              \draw[->] (approved) |- (end);
+              \draw[->] (recovery) |- (end);
+          \end{tikzpicture}
+        }
+    \end{figure}
+\end{frame}
+
+\subsection{Pseudocódigo}
+\begin{frame}[fragile]{Pseudocódigo}
+
+    \SetAlgoNlRelativeSize{0}
+    \SetNlSty{textbf}{}{}
+    \SetAlgoNoLine
+    \SetAlgoNoEnd
+    \renewcommand{\thealgocf}{}
+
+    \centering
+    \makebox[\linewidth]{%
+      \resizebox{0.8\linewidth}{!}{%
+        \begin{minipage}{\textwidth}
+            \begin{algorithm}[H]
+                \KwData{Lâmpada e interruptor}
+                \KwResult{Lâmpada funcionando}
+                Acione o interruptor\;
+                \If{a lâmpada não acendeu}{
+                  Buscar uma nova lâmpada\;
+                  \While{a lâmpada não acender}{
+                    Retirar a lâmpada queimada\;
+                    Colocar a nova lâmpada\;
+                  }
+                }
+                \Return Lâmpada funcionando\;
+            \end{algorithm}
+        \end{minipage}
+      }
+    }
+\end{frame}
+
+\begin{frame}{Boas práticas}
+    \small
+
+    \begin{enumerate}
+        \item Representação dos algoritmos fazem parte da documentação do projeto: deveria-se mantê-los sempre atualizados (boas práticas de engenharia de software);
+        \item Usar referências, como \cite{forbellone2005}, para consultar ao longo do desenvolvimento do seu projeto; 
+    \end{enumerate}
+\end{frame}
+
+% \section{Exercícios}
+
+
+% \frame{ 
+% \frametitle{Exercícios}
+
+% \vfill Construa o fluxograma e o pseudocódigo para (use \url{https://creately.com/app}):
+% 
+% \begin{enumerate}
+%     \vfill \item Dado um número real qualquer, informe qual é o seu dobro.
+%     \vfill \item Dadas as medidas de uma sala em metros (comprimento e largura), informe a sua área em metros quadrados.
+%     \vfill \item Dados um salário e um percentual de reajuste, calcule o salário reajustado. Considere que o percentual de reajuste é dado por um número real entre 0 e 1. Por exemplo, se o reajuste for de 15\%, o usuário deve digitar o número 0.15.
+%     \vfill \item Dados o valor da compra e o percentual de desconto, calcule o valor a ser pago. Considere que o percentual de desconto é um número real entre 0 e 1. 
+% \end{enumerate}
+
+% }
+%   
+%   \frame{ 
+%   \frametitle{Exercícios}
+%   
+%   \vfill Construa um fluxograma que:
+%   
+%   \begin{itemize}
+%       \item Leia a cotação do dólar
+%       \item Leia um valor em dólares
+%       \item Converta esse valor para Real
+%       \item Mostre o resultado
+%   \end{itemize}
+%   
+%   \vfill Desenvolva um fluxograma que:
+%   
+%   \begin{itemize}
+%       
+%       \item Leia 4 (quatro) números
+%       \item Calcule o quadrado para cada um
+%       \item Somem todos e
+%       \item Mostre o resultado
+%   \end{itemize}
+% }
+
+%   \begin{frame}
+%       \frametitle{Exercícios}
+%       
+%       Construa um algoritmo para pagamento de comissão de vendedores de peças, levando-se
+%       em consideração que sua comissão será de 5\% do total da venda e que você tem seguintes dados:
+%       
+%       \begin{itemize}
+%           \item Identificação do vendedor
+%           \item Código da peça
+%           \item Preço unitário da peça
+%           \item Quantidade vendida
+%       \end{itemize}
+%       
+%       Construa o diagrama de blocos do algoritmo desenvolvido, e por fim faça um teste de mesa.
+%       
+%       
+%       
+%   \end{frame}
+
+\section{Referências}
+\begin{frame}[t, allowframebreaks]
+    \frametitle{References}
+    \printbibliography
+\end{frame}
+
+% \section{Referências}
+% \begin{frame}{Referências}   
+%     \begin{itemize}
+%         \item \vfill \href{https://arcade-book.readthedocs.io}{Python Arcade}
+%         \item \vfill \href{http://www.pymunk.org/}{Python Pymunk}
+%         \item \vfill FORBELLONE, A. L. V. \textbf{Lógica de Programação: a construção de algoritmos e estruturas de dados.} 3.ed. São Paulo: Prentice Hall, 2005.
+%         \item \vfill  Eric Freeman. \textbf{Head First Learn to Code}. O'Reilly, 2018.
+%     \end{itemize}
+% \end{frame}
+
+\end{document}
+
+%
+%
+% Local variables section, for Emacs: specifies that this file is the main one.
+%
+%
+%%% Local Variables:
+%%% TeX-master: t
+%%% End:
