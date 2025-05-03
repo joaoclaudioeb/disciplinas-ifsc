@@ -16,6 +16,8 @@
 *.vrb
 *.sty
 **/auto/
+**/figuras/
+**/_minted-exercicio_*/
 *.bcf
 *.run.xml
 
@@ -24,6 +26,8 @@
 *.xdv
 *.ps
 *.tmp.md
+*.bib
+*.listing
 
 # Ignorar backups de editores
 *~
