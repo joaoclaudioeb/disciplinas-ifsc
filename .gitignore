@@ -17,7 +17,7 @@
 *.sty
 **/auto/
 **/figuras/
-**/_minted-exercicio_*/
+**/_minted*/
 *.bcf
 *.run.xml
 
@@ -36,3 +36,7 @@
 
 # Ignorar executaveis
 *.out
+
+# Ignorar build
+**/build/
+**/.settings/

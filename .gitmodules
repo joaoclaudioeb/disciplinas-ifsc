@@ -1,0 +1,6 @@
+[submodule "emb22109/projeto/exemplos/sdk/pico"]
+	path = emb22109/projeto/exemplos/sdk/pico
+	url = https://github.com/raspberrypi/pico-sdk
+[submodule "emb22109/projeto/exemplos/os/FreeRTOS"]
+	path = emb22109/projeto/exemplos/os/FreeRTOS
+	url = https://github.com/FreeRTOS/FreeRTOS-Kernel
