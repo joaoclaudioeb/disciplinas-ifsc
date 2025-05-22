@@ -40,3 +40,4 @@
 # Ignorar build
 **/build/
 **/.settings/
+**/provas/

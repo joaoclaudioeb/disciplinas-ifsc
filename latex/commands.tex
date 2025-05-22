@@ -45,3 +45,47 @@
 
 % Ricci tensor
 \newcommand{\riccitensor}[5]{g_{#1 #5} R^{#5}{}_{#2 #3 #4}}
+
+% https://tex.stackexchange.com/questions/428163/display-shape-for-flowchart-with-tikz
+\makeatletter
+
+\pgfdeclareshape{display}
+{
+  \inheritsavedanchors[from=rectangle] % this is nearly a rectangle
+  \inheritanchorborder[from=rectangle]
+  \inheritanchor[from=rectangle]{north}
+  \inheritanchor[from=rectangle]{west}
+  \inheritanchor[from=rectangle]{east}
+  \inheritanchor[from=rectangle]{south}
+  \inheritanchor[from=rectangle]{center}
+  \inheritbackgroundpath[from=rectangle]
+  \backgroundpath{
+    % points
+    \southwest \pgf@xa=\pgf@x \pgf@ya=\pgf@y
+    \northeast \pgf@xb=\pgf@x \pgf@yb=\pgf@y
+    % dimensions
+    \pgfmathsetlength{\pgfutil@tempdima}{\pgf@xb-\pgf@xa}
+    \pgfmathsetlength{\pgfutil@tempdimb}{\pgf@yb-\pgf@ya}
+    % path
+    \pgfpathmoveto{\pgfpointadd{\pgfqpoint{\pgf@xa}{\pgf@ya}}{\pgfqpoint{0.2\pgfutil@tempdima}{0pt}}}
+    \pgfpathlineto{\pgfpointadd{\pgfqpoint{\pgf@xa}{\pgf@ya}}{\pgfqpoint{0pt}{0.5\pgfutil@tempdimb}}}
+    \pgfpathlineto{\pgfpointadd{\pgfqpoint{\pgf@xa}{\pgf@yb}}{\pgfqpoint{0.2\pgfutil@tempdima}{0pt}}}    
+    \pgfpathlineto{\pgfpointadd{\pgfqpoint{\pgf@xb}{\pgf@yb}}{\pgfqpoint{-0.2\pgfutil@tempdima}{0pt}}}
+    \pgfpatharc{90}{-90}{0.2\pgfutil@tempdima and 0.5\pgfutil@tempdimb}
+    \pgfpathlineto{\pgfpointadd{\pgfqpoint{\pgf@xb}{\pgf@ya}}{\pgfqpoint{-0.2\pgfutil@tempdima}{0pt}}}
+    \pgfpathlineto{\pgfpointadd{\pgfqpoint{\pgf@xa}{\pgf@ya}}{\pgfqpoint{0.2\pgfutil@tempdima}{0pt}}}
+    \pgfpathclose    
+  }
+}
+
+
+\makeatother
+
+\newcommand{\pontos}[1]{\textbf{(#1 pts.)}:~}
+
+\newenvironment{questao}[2][]{%
+    \noindent\textbf{#2} \textbf{#1}%
+    \ignorespaces
+}{%
+    \vspace{0.5cm}%
+}

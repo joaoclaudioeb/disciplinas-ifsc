@@ -11,9 +11,89 @@
     \usepackage[utf8]{inputenc}
 \fi
 
+
+\usepackage[nolist]{acronym}
+
 % ==================================================
 \usepackage{tikz}
-\usetikzlibrary{positioning}
+\usetikzlibrary{patterns}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes, arrows, positioning}
+
+\tikzset{arrows={[scale=2.0]}}
+
+\newcommand{\customSingleBox}[4]{%
+  \node[
+    draw,
+    minimum width=1cm,
+    minimum height=1cm,
+    anchor=center,
+    align=center,
+    fill=#4!50
+  ] (#1) at (#2) {#3};
+}
+
+\newcommand{\customMiniBox}[4]{%
+  \node[
+    draw,
+    minimum width=0.5cm,
+    minimum height=0.5cm,
+    anchor=center,
+    align=center,
+    fill=#4!50
+  ] (#1) at (#2) {#3};
+}
+
+\newcommand{\customDecBox}[3]{%
+  \node[
+    draw,
+    diamond,
+    minimum width=2cm,
+    minimum height=1cm,
+    inner sep=0cm,
+    anchor=center,
+    align=center,
+    fill=orange!50
+  ] (#1) at (#2) {#3};
+}
+
+\newcommand{\customTerminator}[4]{%
+  \node[
+    draw,
+    shape=ellipse,
+    minimum width=2cm,
+    minimum height=1cm,
+    anchor=center,
+    align=center,
+    fill=#4!50
+  ] (#1) at (#2) {#3};
+}
+
+\newcommand{\customInputBox}[4]{%
+  \node[
+    draw,
+    trapezium,
+    trapezium left angle=70,
+    trapezium right angle=110,
+    minimum width=1cm,
+    minimum height=1cm,
+    anchor=center,
+    align=center,
+    fill=#4!50
+  ] (#1) at (#2) {#3};
+}
+
+\newcommand{\customOutputBox}[4]{%
+  \node[
+    draw,
+    shape=display,
+    minimum width=3cm,
+    minimum height=1.5cm,
+    anchor=center,
+    align=center,
+    fill=#4!50
+  ] (#1) at (#2) {#3};
+}
 
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
