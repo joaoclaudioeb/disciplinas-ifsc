@@ -13,6 +13,7 @@
 
 
 \usepackage[nolist]{acronym}
+\usepackage{booktabs}
 
 % ==================================================
 \usepackage{tikz}
@@ -98,7 +99,23 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 
-\usepackage{siunitx}
+\usepackage[separate-uncertainty = true,multi-part-units=single]{siunitx}
+\DeclareSIUnit\rad{rad}
+\DeclareSIUnit\radSi{rad(Si)}
+\DeclareSIUnit\gy{Gy}
+\DeclareSIUnit\protons{protons}
+\DeclareSIUnit\ions{ions}
+\DeclareSIUnit\ev{eV}
+\DeclareSIUnit\mbar{mbar}
+\DeclareSIUnit\bar{bar}
+\DeclareSIUnit\oct{oct}
+\DeclareSIUnit\gn{g_{n}}
+\DeclareSIUnit\rms{RMS}
+\DeclareSIUnit\vrms{V\subs{rms}}
+\DeclareSIUnit\usd{\$}
+\sisetup{detect-weight,detect-mode}
+\sisetup{per-mode=fraction}
+\sisetup{exponent-product=\cdot}
 
 \usepackage{tikz-timing}
 \usetikztiminglibrary[rising arrows]{clockarrows}
