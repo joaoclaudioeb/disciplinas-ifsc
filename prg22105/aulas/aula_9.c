@@ -208,8 +208,8 @@ int esta_vazia_dinamica(FilaDinamica *f) {
  *       +-----+-----+
  *       | 100 | NULL|
  *       +-----+-----+
- *         ^     ^
- *    inicio    fim
+ *       ^     ^
+ *    inicio  fim
  * 
  *    2. enfileirar(200):
  *       +-----+-----+    +-----+-----+
@@ -222,8 +222,8 @@ int esta_vazia_dinamica(FilaDinamica *f) {
  *       +-----+-----+    +-----+-----+    +-----+-----+
  *       | 100 |  ---|--> | 200 |  ---|--> | 300 | NULL|
  *       +-----+-----+    +-----+-----+    +-----+-----+
- *         ^                          ^
- *      inicio                       fim
+ *         ^                               ^
+ *      inicio                            fim
  */
 void enfileirar_dinamica(FilaDinamica *f, int valor) {
     No *novo = malloc(sizeof(No));
@@ -253,8 +253,8 @@ void enfileirar_dinamica(FilaDinamica *f, int valor) {
  *       +-----+-----+    +-----+-----+
  *       | 200 |  ---|--> | 300 | NULL|
  *       +-----+-----+    +-----+-----+
- *         ^              ^
- *      inicio           fim
+ *       ^                ^
+ *    inicio             fim
  */
 int desenfileirar_dinamica(FilaDinamica *f) {
     if (esta_vazia_dinamica(f)) {
