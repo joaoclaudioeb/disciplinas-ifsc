@@ -18,7 +18,7 @@ Há alguns vídeos e playlists, listados abaixo, que podem ser úteis para o com
 
 <div align="center">
 
-| [![Como Criar um Repositório](https://img.youtube.com/vi/xtEh4BZfj4o/hqdefault.jpg)](https://www.youtube.com/playlist?list=PLqJK4Oyr5WSglLpxRZM5cAnmMdgsio-Zy) | [![Introdução ao Git](https://img.youtube.com/vi/S9uPNppGsGo/hqdefault.jpg)](https://www.youtube.com/playlist?list=PLvE-ZAFRgX8hnECDn1v9HNTI71veL3oW0) |
+| [![Curso de algorítmos e lógica de programação](https://img.youtube.com/vi/xtEh4BZfj4o/hqdefault.jpg)](https://www.youtube.com/playlist?list=PLqJK4Oyr5WSglLpxRZM5cAnmMdgsio-Zy) | [![Curso de programação em Python](https://img.youtube.com/vi/S9uPNppGsGo/hqdefault.jpg)](https://www.youtube.com/playlist?list=PLvE-ZAFRgX8hnECDn1v9HNTI71veL3oW0) |
 |:---:|:---:|
 | Curso de algorítmos e lógica de programação | Curso de programação em Python |
 
