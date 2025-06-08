@@ -10,8 +10,8 @@ Implementation of the state machine 'Statechart'
 
 
 Statechart::Statechart() :
-	low(0),
-	high(1),
+	low(1),
+	high(0),
 	output(1),
 	led_pin(25),
 	delay(500),

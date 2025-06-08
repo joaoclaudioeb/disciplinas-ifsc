@@ -266,71 +266,81 @@ numbers=none
 \section{Sistemas Embarcados}
 
 \begin{frame}[fragile]
-\frametitle{Revisão: Sistemas embarcados}
+    \frametitle{Revisão: sistemas embarcados}
 
-\begin{columns}
-    \begin{column}{0.6\textwidth}
-        \begin{enumerate}\footnotesize
-            \item São sistemas computacionais desenvolvidos para realizar funções específicas;
-            \item Usualmente constituem ``sistemas maiores'';
-            \item Usualmente possuem diversas restrições e limitações (e.g., quantidade de memória, capacidade de processamento, gerenciamento de energia);
-            \item Por vezes, usados em aplicações de \textit{real-time} e de alta confiabilidade (e.g., aplicações automotivas, aeroespaciais);
-            \item Usualmente têm interação direta com o ambiente físico.
-        \end{enumerate}
-    \end{column}
-    
-    \begin{column}{0.4\textwidth}
-        \begin{center}
-            % https://magazine.raspberrypi.com/articles/cubesat-dual-redundant-flight-computer
-            \includegraphics[width=0.8\textwidth]{../figures/cubesat_obc_rasp.jpeg}
-        \end{center}
-    \end{column}
-\end{columns}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \begin{enumerate}\footnotesize
+                \item São sistemas computacionais desenvolvidos para realizar funções específicas;
+                \item Usualmente constituem ``sistemas maiores'';
+                \item Usualmente possuem diversas restrições e limitações (e.g., quantidade de memória, capacidade de processamento, gerenciamento de energia);
+                \item Por vezes, usados em aplicações de \textit{real-time} e de alta confiabilidade (e.g., aplicações automotivas, aeroespaciais);
+                \item Usualmente têm interação direta com o ambiente físico.
+            \end{enumerate}
+        \end{column}
+        
+        \begin{column}{0.4\textwidth}
+            \begin{center}
+                \includegraphics[width=0.8\textwidth]{../figures/cubesat_obc_rasp.jpeg}\\
+                \footnotesize Fonte: Retirado de \cite{hattersley_2021}
+            \end{center}
+        \end{column}
+    \end{columns}
 
-\vfill
-\begin{block}{Definição}
-    \textit{An embedded system is a computerized system that is purpose built for its application \cite{white_2024}.}
-\end{block}
+    \vfill
+    \begin{block}{Definição}
+        \textit{An embedded system is a computerized system that is purpose-built for its application \cite{white_2024}.}
+    \end{block}
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Revisão: Software embarcado}
+    \frametitle{Revisão: software embarcado}
 
-\begin{columns}
-    \begin{column}{0.5\textwidth}
-        \textbf{Bare-metal:}
-        \begin{enumerate}\small
-            \item Controle direto e total do hardware;
-            \item Ausência de overhead de sistema operacional;
-            \item Máximo desempenho e otimização de recursos;
-            \item Maior complexidade e tempo de desenvolvimento;
-            \item Depuração mais desafiadora.
-        \end{enumerate}
-    \end{column}
-    
-    \begin{column}{0.5\textwidth}
-        \textbf{SO:}
-        \begin{enumerate}\small
-            \item Camada de abstração de hardware;
-            \item Gerenciamento de multitarefas e recursos;
-            \item Facilita o desenvolvimento e aumenta a produtividade;
-            \item Pequeno overhead de CPU/memória;
-            \item Maior modularidade e manutenibilidade.
-        \end{enumerate}
-    \end{column}
-\end{columns}
-
+    \begin{columns}[t]
+        \begin{column}{0.5\textwidth}
+            \textbf{Bare-metal:}
+            \vspace{0.25cm}
+            \begin{enumerate}\small
+                \item Controle direto e total do hardware;
+                \item Ausência de overhead de sistema operacional;
+                \item Máximo desempenho e otimização de recursos;
+                \item Maior complexidade e tempo de desenvolvimento;
+                \item Depuração mais desafiadora.
+            \end{enumerate}
+        \end{column}
+        
+        \begin{column}{0.5\textwidth}
+            \textbf{SO:}
+            \vspace{0.25cm}
+            \begin{enumerate}\small
+                \item Camada de abstração de hardware;
+                \item Gerenciamento de multitarefas e recursos;
+                \item Facilita o desenvolvimento e aumenta a produtividade;
+                \item Pequeno overhead de CPU/memória;
+                \item Maior modularidade e manutenibilidade.
+            \end{enumerate}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{Abordagens de implementação do software embarcado}
+    \frametitle{Revisão: software embarcado}
 
     \begin{center}
-        % https://www.intel.com/content/www/us/en/docs/programmable/683211/current/bare-metal-overview.html
-        \includegraphics[width=0.6\textwidth]{../figures/bare_metal_vs_os.png}
+        \includegraphics[width=0.8\textwidth]{../figures/bare_metal_software.png}
     \end{center}
-
 \end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Revisão: software embarcado}
+
+    \begin{center}
+        \includegraphics[width=0.8\textwidth]{../figures/os_based_software.png}
+    \end{center}
+\end{frame}
+
+% https://www.researchgate.net/publication/220794952_Me3D_A_model-driven_methodology_expediting_embedded_device_driver_development
+% https://www.intel.com/content/www/us/en/docs/programmable/683211/current/bare-metal-overview.html
 
 \section{Introdução a SOs}
 
@@ -338,19 +348,18 @@ numbers=none
     \frametitle{Sistema Operacional}
 
     \begin{columns}
-        \begin{column}{0.55\textwidth}
-            \begin{enumerate}\small
-                \item Software essencial para FACILITAR o uso de sistemas computacionais;
+        \begin{column}{0.4\textwidth}
+            \begin{enumerate}\footnotesize
+                \item É o software que facilita o uso de sistemas computacionais;
                 \item Permite a execução de múltiplos programas (aparentemente) simultaneamente;
                 \item Gerencia os recursos de hardware do sistema computacional (e.g., CPU, memória, dispositivos de I/O);
-                \item Portanto, pode ser visto sob duas perspectivas principais: máquina virtual e gerenciador de recursos.
+                \item Portanto, pode ser visto sob duas perspectivas principais: como sendo uma ``máquina virtual'' e um gerenciador de recursos.
             \end{enumerate}
         \end{column}
         
-        \begin{column}{0.45\textwidth}
+        \begin{column}{0.6\textwidth}
             \begin{center}
-                % Diagrama ilustrativo da estrutura de um SO (e.g., camadas, kernel/user space)
-                \includegraphics[width=0.85\textwidth]{example-image-a}
+                \includegraphics[width=\textwidth]{../figures/basic_os.png}
             \end{center}
         \end{column}
     \end{columns}
@@ -359,380 +368,237 @@ numbers=none
 \begin{frame}[fragile]
     \frametitle{SO como ``máquina virtual''}
 
-    \begin{enumerate}\footnotesize
+    \begin{enumerate}\small
         \item A principal técnica utilizada é a ``virtualização'';
         \item Transforma recursos de hardware (e.g., CPU, memória) em formas virtuais mais gerais, poderosas e fáceis de usar;
         \item Abstrai detalhes complexos do hardware, provendo uma interface de mais alto nível;
         \item Oferece interfaces (APIs/chamadas de sistema) para que programas acessem funcionalidades e recursos;
         \item Contribui para a portabilidade das aplicações.
     \end{enumerate}
-
-    \vfill
-    \begin{center}
-        % Diagrama de comunicação entre aplicação e hardware via SO, mostrando a abstração
-        \includegraphics[width=0.5\textwidth]{example-image-a}
-    \end{center}
 \end{frame}
 
 \begin{frame}[fragile]
     \frametitle{SO como gerenciador de recursos}
 
+    \begin{enumerate}\small
+        \item Gerencia e aloca os recursos do sistema entre múltiplos programas:
+        \begin{enumerate}\footnotesize
+            \item CPU (agendamento de processos/tarefas);
+            \item Memória (alocação e proteção);
+            \item Dispositivos de E/S (compartilhamento);
+        \end{enumerate}
+        \item Controla a execução de programas;
+        \item Previne erros e o uso indevido de recursos;
+        \item Otimiza o uso dos recursos com base em diversos objetivos.
+    \end{enumerate}
+\end{frame}
+
+\section{O núcleo de um SO: kernel}
+
+\begin{frame}[fragile]
+    \frametitle{Kernel e modos de execu\c{c}\~ao}
+
     \begin{columns}
         \begin{column}{0.55\textwidth}
             \begin{enumerate}\small
-                \item Gerencia e aloca os recursos do sistema entre múltiplos programas:
+                \item O kernel \'{e} o n\'{u}cleo do sistema operacional:
                 \begin{enumerate}\footnotesize
-                    \item CPU (agendamento de processos/tarefas);
-                    \item Memória (alocação e proteção);
-                    \item Dispositivos de E/S (compartilhamento);
+                    \item Primeira parte carregada durante o boot;
+                    \item Executa em \textbf{modo privilegiado} (\textit{kernel mode});
+                    \item Respons\'{a}vel por gerenciar recursos do sistema.
                 \end{enumerate}
-                \item Controla a execução de programas;
-                \item Previne erros e o uso indevido de recursos;
-                \item Otimiza o uso dos recursos com base em diversos objetivos.
+                \item O processador opera em dois modos:
+                \begin{enumerate}\footnotesize
+                    \item \textbf{Modo Usu\'{a}rio}: instru\c{c}\~oes restritas, sem acesso direto ao hardware;
+                    \item \textbf{Modo Kernel}: acesso total a todos os recursos do sistema.
+                \end{enumerate}
             \end{enumerate}
         \end{column}
-        
         \begin{column}{0.45\textwidth}
             \begin{center}
-                % Diagrama ilustrando o gerenciamento de recursos pelo SO
-                \includegraphics[width=0.85\textwidth]{example-image-a}
+                % Diagrama com modo usu\'{a}rio e modo kernel (com setas de transi\c{c}\~ao via syscall/interrupt)
+                \includegraphics[width=0.9\textwidth]{example-image-a}
+            \end{center}
+        \end{column}
+    \end{columns}
+
+    \vfill
+    \begin{center}
+        \textit{Transi\c{c}\~oes entre modos ocorrem via interrup\c{c}\~oes e chamadas de sistema (syscalls)}
+    \end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Fun\c{c}\~oes T\'ipicas do Kernel}
+
+    \begin{enumerate}\small
+        \item Gerenciamento de processos (cria\c{c}\~ao, escalonamento, finaliza\c{c}\~ao);
+        \item Gerenciamento de mem\'{o}ria (aloca\c{c}\~ao, pagina\c{c}\~ao, prote\c{c}\~ao);
+        \item Gerenciamento de dispositivos (drivers, interrup\c{c}\~oes);
+        \item Sistema de arquivos (organiza\c{c}\~ao, acesso, permiss\~oes);
+        \item Comunica\c{c}\~ao entre processos (IPC);
+        \item Seguran\c{c}a (controle de acesso, isolamento).
+    \end{enumerate}
+
+    \vfill
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{example-image-a} % Representa\c{c}\~ao dos servi\c{c}os centrais do kernel
+    \end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Espa\c{c}o de Endere\c{c}amento e Isolamento}
+
+    \begin{columns}
+        \begin{column}{0.55\textwidth}
+            \begin{itemize}\small
+                \item O kernel opera em um espa\c{c}o de mem\'{o}ria separado (espa\c{c}o kernel);
+                \item Aplicativos operam em \textbf{modo usu\'{a}rio}, sem acesso direto ao hardware;
+                \item A troca entre modos \'{e} mediada pelo hardware (MMU + privil\'{e}gios);
+                \item Falhas no modo kernel afetam todo o sistema; no modo usu\'{a}rio, apenas o processo.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \begin{center}
+                \includegraphics[width=0.85\textwidth]{example-image-a} % Diagrama de espa\c{c}o de endere\c{c}o dividido entre user/kernel
+            \end{center}
+        \end{column}
+    \end{columns}
+
+    \vfill
+    \begin{center}
+        \textit{Drivers no kernel: maior desempenho, maior risco.}
+    \end{center}
+\end{frame}
+
+\section{Tipos de kernel}
+
+\begin{frame}[fragile]
+    \frametitle{Abordagens de design de kernel}
+
+    \begin{enumerate}\small
+        \item \textbf{Monolítico}: kernel grande e unificado, todos os serviços no modo kernel.
+        \item \textbf{Microkernel}: apenas funções essenciais no kernel; serviços externos no modo usuário.
+        \item \textbf{Híbrido}: mistura características dos dois modelos anteriores.
+        \item \textbf{Exokernel}: abstrai o mínimo; expõe recursos diretamente às aplicações.
+    \end{enumerate}
+
+    \vfill
+    \begin{center}
+        \textit{* O termo ``kernel híbrido'' \'{e} discutido na literatura \cite{microkernel2007}.}
+    \end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Kernel Monolítico}
+
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{enumerate}\footnotesize
+                \item Todos os serviços operacionais rodam em modo kernel (drivers, arquivos, rede, etc.);
+                \item Vantagens: alto desempenho, comunicação interna eficiente;
+                \item Desvantagens: menor isolamento, falhas podem comprometer todo o sistema;
+                \item Exemplos: Linux, FreeBSD, Unix tradicional.
+            \end{enumerate}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \begin{center}
+                \includegraphics[width=\textwidth]{../figures/monolitico.png}
             \end{center}
         \end{column}
     \end{columns}
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Kernel de um SO}
+    \frametitle{Microkernel}
 
-\begin{enumerate}\small
-    \item \textbf{Kernel = Núcleo}
-    \begin{enumerate}\footnotesize
-        \item Parte central e fundamental de um programa/algoritmo
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{enumerate}\footnotesize
+                \item Mantém no kernel apenas funções essenciais: IPC, gerenciamento de processos e interrupções;
+                \item Drivers, sistema de arquivos e rede rodam como serviços em modo usuário;
+                \item Alta modularidade e isolamento de falhas;
+                \item Comunicação via troca de mensagens (IPC);
+                \item Exemplos: MINIX, QNX, seL4.
+            \end{enumerate}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \begin{center}
+                \includegraphics[width=\textwidth]{../figures/microkernel.png}
+            \end{center}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Kernel Híbrido}
+
+    \begin{enumerate}\small
+        \item Combina características de microkernel e monolítico;
+        \item Alguns serviços rodam em modo kernel para ganho de desempenho;
+        \item Outros rodam isoladamente em modo usuário;
+        \item Exemplos: Windows NT, macOS (XNU), DragonFly BSD;
+        \item Equilíbrio entre segurança, desempenho e manutenção.
     \end{enumerate}
-    
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Exokernel}
+
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{enumerate}\footnotesize
+                \item Não abstrai recursos; apenas controla acesso seguro e eficiente;
+                \item Aplicações escolhem como usar CPU, memória, disco, rede;
+                \item Abstrações tradicionais (sockets, arquivos, processos) são delegadas a bibliotecas no espaço do usuário;
+                \item Projetado para máxima flexibilidade e desempenho;
+                \item Exemplo: ExOS (MIT), Nemesis.
+            \end{enumerate}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \begin{center}
+                \includegraphics[width=\textwidth]{../figures/exokernel.png}
+            \end{center}
+        \end{column}
+    \end{columns}
     \vfill
-    \item \textbf{Kernel = Modo Kernel (Supervisor)}
-    \begin{enumerate}\footnotesize
-        \item Parte de um programa que executa em modo Kernel
-        \item Modo Kernel -> Espaço/Modo de Execução
-        \item Suporte do Processador a diferentes espaços ou níveis de execução (modo Kernel e modo usuário)
-    \end{enumerate}
-\end{enumerate}
+    \begin{center}
+        \textit{Aplicações podem experimentar novas abstrações diretamente sobre o hardware.}
+    \end{center}
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Kernel de um SO}
+    \frametitle{Comparação entre Tipos de Kernel}
 
-\begin{enumerate}\small
-    \item Núcleo do Sistema Operacional
-    \item Provê o Gerenciamento do Sistema e Funcionalidades Básicas
-    \item Executa em modo privilegiado (modo kernel)
-    \item Controla acesso direto ao hardware
-    \item Implementa serviços fundamentais:
-    \begin{enumerate}\footnotesize
-        \item Gerenciamento de memória
-        \item Gerenciamento de processos
-        \item Gerenciamento de dispositivos
-        \item Comunicação entre processos
-    \end{enumerate}
-\end{enumerate}
-\end{frame}
+    \begin{center}
+        \resizebox{\textwidth}{!}{
+          \begin{tabular}{lcccc}
+            \toprule
+            \textbf{Característica} & \textbf{Monolítico} & \textbf{Microkernel} & \textbf{Híbrido} & \textbf{Exokernel} \\
+            \midrule
+            \midrule
+            Tamanho do kernel       & Grande              & Pequeno              & Médio            & Mínimo \\
+            \midrule
+            Desempenho              & Alto                & Moderado             & Alto/Moderado    & Potencial alto \\
+            \midrule
+            Modularidade            & Baixa               & Alta                 & Média            & Alta \\
+            \midrule
+            Segurança               & Menor               & Maior                & Média            & Variável \\
+            \midrule
+            Complexidade            & Alta                & Média                & Alta             & Baixa (kernel) \\
+                                    &                     &                      &                  & Alta (LibOS) \\
+            \midrule
+            Exemplos                & Linux,              & MINIX,               & Windows NT,      & MIT Exokernel, \\
+                                    & FreeBSD             & QNX                  & macOS            & Nemesis \\
+            \bottomrule
+          \end{tabular}
+        }
+    \end{center}
 
-\begin{frame}[fragile]
-\frametitle{Ambientes de Execução}
-
-\begin{center}
-    % Diagrama de camadas de abstração e anéis de privilégio
-    \includegraphics[width=0.5\textwidth]{example-image-a}
-\end{center}
-
-\begin{enumerate}\small
-    \item Diferentes níveis de acesso ao hardware
-    \item Proteção contra operações indevidas
-    \item Separação entre código privilegiado e não-privilegiado
-\end{enumerate}
-\end{frame}
-
-\section{Tipos de Kernel}
-
-\begin{frame}[fragile]
-\frametitle{Abordagens de Design de Kernel}
-
-\begin{enumerate}\small
-    \item \textbf{Kernel Monolítico}
-    \item \textbf{Microkernel}
-    \begin{enumerate}\footnotesize
-        \item Nanokernel
-    \end{enumerate}
-    \item \textbf{Kernel Híbrido}
-    \item \textbf{Exokernel}
-\end{enumerate}
-
-\vfill
-\begin{center}
-    \textit{*Kernel Híbrido é tido como um termo controverso dentre a comunidade científica da área \cite{microkernel2007}.}
-\end{center}
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{Kernel Monolítico}
-
-\begin{columns}
-    \begin{column}{0.55\textwidth}
-        \begin{enumerate}\small
-            \item Todo o sistema operacional executa em modo kernel
-            \item Abordagem tradicional
-            \item Exemplos:
-            \begin{enumerate}\footnotesize
-                \item Unix tradicional
-                \item Linux
-                \item FreeBSD
-            \end{enumerate}
-            \item Vantagens:
-            \begin{enumerate}\footnotesize
-                \item Desempenho
-                \item Acesso direto ao hardware
-            \end{enumerate}
-            \item Desvantagens:
-            \begin{enumerate}\footnotesize
-                \item Menor segurança
-                \item Falhas afetam todo o sistema
-            \end{enumerate}
-        \end{enumerate}
-    \end{column}
-    
-    \begin{column}{0.45\textwidth}
-        \begin{center}
-            % Diagrama de kernel monolítico vs microkernel
-            \includegraphics[width=\textwidth]{example-image-a}
-        \end{center}
-    \end{column}
-\end{columns}
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{Microkernel}
-
-\begin{columns}
-    \begin{column}{0.55\textwidth}
-        \begin{enumerate}\small
-            \item Apenas funções essenciais no kernel
-            \item Serviços executam como processos em modo usuário
-            \item Comunicação via IPC (Comunicação Entre Processos)
-            \item Exemplos:
-            \begin{enumerate}\footnotesize
-                \item MINIX
-                \item QNX
-                \item L4
-            \end{enumerate}
-            \item Vantagens:
-            \begin{enumerate}\footnotesize
-                \item Maior segurança
-                \item Falhas isoladas
-                \item Código mais modular
-            \end{enumerate}
-        \end{enumerate}
-    \end{column}
-    
-    \begin{column}{0.45\textwidth}
-        \begin{center}
-            % Diagrama de arquitetura microkernel
-            \includegraphics[width=\textwidth]{example-image-a}
-        \end{center}
-    \end{column}
-\end{columns}
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{Conceitos e Objetivos do Microkernel}
-
-\begin{enumerate}\small
-    \item \textbf{Segurança}
-    \begin{enumerate}\footnotesize
-        \item Menor código possível executando em modo Kernel
-        \item Menos tempo de execução do sistema em modo privilegiado
-    \end{enumerate}
-    
     \vfill
-    \item \textbf{Separação de Serviços em Servidores}
-    \begin{enumerate}\footnotesize
-        \item Serviços executam como processos independentes
-        \item Isolamento de falhas
-    \end{enumerate}
-    
-    \vfill
-    \item \textbf{Comunicação via IPC}
-    \begin{enumerate}\footnotesize
-        \item Baseada em troca de mensagens
-        \item Mecanismo fundamental para operação do sistema
-    \end{enumerate}
-\end{enumerate}
-
-\vfill
-\begin{center}
-    \textit{Abordagem proposta por Liedtke \cite{liedtke1995micro} para melhorar a segurança e modularidade}
-\end{center}
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{Kernel Híbrido}
-
-\begin{columns}
-    \begin{column}{0.55\textwidth}
-        \begin{enumerate}\small
-            \item Combina características de kernel monolítico e microkernel
-            \item Alguns serviços no espaço do kernel, outros como processos de usuário
-            \item Exemplos:
-            \begin{enumerate}\footnotesize
-                \item Windows NT (Windows 10/11)
-                \item macOS (XNU)
-                \item DragonFly BSD
-            \end{enumerate}
-            \item Vantagens:
-            \begin{enumerate}\footnotesize
-                \item Equilíbrio entre desempenho e modularidade
-                \item Flexibilidade de design
-            \end{enumerate}
-        \end{enumerate}
-    \end{column}
-    
-    \begin{column}{0.45\textwidth}
-        \begin{center}
-            % Diagrama do kernel Windows NT
-            \includegraphics[width=\textwidth]{example-image-a}
-        \end{center}
-    \end{column}
-\end{columns}
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{Exokernel}
-
-\begin{enumerate}\small
-    \item Abordagem minimalista e radical
-    \item Kernel fornece apenas proteção e multiplexação de recursos
-    \item Bibliotecas em nível de usuário (LibOS) implementam abstrações tradicionais
-    \item Desenvolvido no MIT nos anos 90 \cite{engler1995exokernel}
-    \item Vantagens:
-    \begin{enumerate}\footnotesize
-        \item Máxima flexibilidade para aplicações
-        \item Personalização de abstrações
-        \item Potencial para alto desempenho
-    \end{enumerate}
-    \item Desvantagens:
-    \begin{enumerate}\footnotesize
-        \item Complexidade para desenvolvedores de aplicações
-        \item Menor portabilidade
-        \item Poucos sistemas em produção
-    \end{enumerate}
-\end{enumerate}
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{Comparação entre Tipos de Kernel}
-
-\begin{center}
-\resizebox{\textwidth}{!}{
-\begin{tabular}{|l|c|c|c|c|}
-\hline
-\textbf{Característica} & \textbf{Monolítico} & \textbf{Microkernel} & \textbf{Híbrido} & \textbf{Exokernel} \\
-\hline
-Tamanho do kernel & Grande & Pequeno & Médio & Mínimo \\
-\hline
-Desempenho & Alto & Moderado & Alto/Moderado & Potencial alto \\
-\hline
-Modularidade & Baixa & Alta & Média & Alta \\
-\hline
-Segurança & Menor & Maior & Média & Variável \\
-\hline
-Complexidade & Alta & Média & Alta & Baixa (kernel) \\
- & & & & Alta (LibOS) \\
-\hline
-Exemplos & Linux, & MINIX, & Windows NT, & MIT Exokernel, \\
- & FreeBSD & QNX & macOS & Nemesis \\
-\hline
-\end{tabular}
-}
-\end{center}
-
-\vfill
-\begin{center}
-    \textit{Cada tipo de kernel apresenta vantagens e desvantagens específicas \cite{tanenbaum2015modern}}
-\end{center}
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{Interação de um Sistema com SO}
-
-\begin{columns}
-    \begin{column}{0.55\textwidth}
-        \begin{enumerate}\small
-            \item Comunicação entre aplicações e kernel:
-            \begin{enumerate}\footnotesize
-                \item Kernel Monolítico: System Calls e Sinais de Interrupções
-                \item Microkernel: IPC, Kernel Calls e Sinais de Interrupções
-            \end{enumerate}
-            \item Diferenças fundamentais:
-            \begin{enumerate}\footnotesize
-                \item Monolítico: chamadas diretas ao kernel
-                \item Microkernel: comunicação via mensagens entre processos
-            \end{enumerate}
-        \end{enumerate}
-    \end{column}
-    
-    \begin{column}{0.45\textwidth}
-        \begin{center}
-            % Diagrama de comunicação do sistema
-            \includegraphics[width=\textwidth]{example-image-a}
-        \end{center}
-    \end{column}
-\end{columns}
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{Tendências Atuais em Design de Kernel}
-
-\begin{enumerate}\small
-    \item Sistemas operacionais modernos tendem a adotar abordagens híbridas
-    \item Linux: kernel monolítico com módulos carregáveis
-    \item Windows: kernel híbrido com componentes em modo kernel e modo usuário
-    \item Sistemas embarcados: microkernels ganham popularidade pela segurança
-    \item Virtualização e containers: novas demandas para design de kernel
-    \item Sistemas de tempo real: foco em previsibilidade e determinismo
-\end{enumerate}
-
-\vfill
-\begin{center}
-    \textit{A escolha do tipo de kernel para sistemas embarcados depende dos requisitos específicos da aplicação \cite{stallings2018operating}}
-\end{center}
-\end{frame}
-
-\begin{frame}{Resumo}
-\begin{enumerate}\small
-    \item Sistemas Embarcados podem ser implementados:
-    \begin{enumerate}\footnotesize
-        \item Bare Metal: programação direta no hardware
-        \item Com Sistema Operacional: camada de abstração
-    \end{enumerate}
-    
-    \vfill
-    \item Sistemas Operacionais são camadas de software que gerenciam recursos de hardware
-    
-    \vfill
-    \item Podem ser vistos como Máquinas Virtuais ou Gerenciadores de Recursos
-    
-    \vfill
-    \item O Kernel é o núcleo do sistema operacional, executando em modo privilegiado
-    
-    \vfill
-    \item Principais tipos de kernel:
-    \begin{enumerate}\footnotesize
-        \item Monolítico: todo o SO em modo kernel (Linux)
-        \item Microkernel: mínimo em modo kernel, serviços em modo usuário (MINIX)
-        \item Híbrido: combinação das abordagens anteriores (Windows NT)
-        \item Exokernel: apenas proteção e multiplexação de recursos
-    \end{enumerate}
-\end{enumerate}
+    \begin{center}
+        \textit{Cada tipo de kernel apresenta vantagens e desvantagens específicas \cite{tanenbaum2015modern}}
+    \end{center}
 \end{frame}
 
 \section{Referências}
