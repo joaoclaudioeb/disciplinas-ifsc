@@ -1,0 +1,53 @@
+\input{preamble}
+\input{format}
+\input{commands}
+
+\begin{document}
+
+\begin{Large}
+    \textbf{PRG203402 --- Lógica de Programação}
+    
+    Atividade 1 --- Pseudocódigos \hfill \lang{blabla}{\DAY~de \MONTH~de \YEAR}
+\end{Large}
+
+\vspace{1ex}
+\textbf{\lang{Lecturer:}{Professor:}} \text{João Cláudio Elsen Barcellos}, \href{mailto:joao.barcellos@ifsc.edu.br}{\texttt{joao.barcellos@ifsc.edu.br}}\\
+\textbf{\lang{Student:}{Estudante:}}
+
+
+\vspace{2ex}
+
+\begin{problem}{Interpretação de pseudocódigos}{pseudocode}
+
+Considere o pseudocódigo abaixo e descreva-o por meio de um fluxograma.
+
+\begin{mylisting}[enhanced]{Pseudocódigo}{text}{firstnumber=1, numbers=left, xleftmargin=10pt, numbersep=10pt, fontsize=\small}
+Programa MediaDosPositivos
+Var S,P,I,N,MD:Inteiro
+Início
+    S ← 0
+    P ← 0
+    Para I ← 1 Até 10 Faça
+    Início
+        Escreva “Digite um numero”
+        Leia N;
+        Se N >= 0 Então
+        Início
+            S ← S + N
+            P ← P + 1
+        Fim Se
+    Fim Para
+    MD ← S/P
+    Escreva “A média é:”, MD
+FIM. 
+\end{mylisting}
+
+\textit{\footnotesize Exercício retirado de \cite{uninove_2013}.}
+
+\end{problem}
+
+\newpage
+
+\printbibliography
+
+\end{document}

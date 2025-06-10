@@ -1,0 +1,106 @@
+\documentclass[letterpaper, 11pt]{extarticle}
+\usepackage{ifxetex}
+\ifxetex
+    \usepackage{fontspec}
+    \defaultfontfeatures{Ligatures={TeX}}
+    \setmainfont{Arial}
+\else % pdflatex
+    \usepackage{lmodern}            
+    \renewcommand{\familydefault}{\sfdefault}
+    \usepackage[T1]{fontenc}       
+    \usepackage[utf8]{inputenc}
+\fi
+
+\usepackage[export]{adjustbox}
+
+% ==================================================
+
+\usepackage{tikz-timing}
+\usetikztiminglibrary{clockarrows}
+\NewDocumentCommand{\busref}{som}{\texttt{%
+#3%
+\IfValueTF{#2}{[#2]}{}%
+\IfBooleanTF{#1}{\#}{}%
+}}
+
+% Miscellaneous packages
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{subcaption}
+\usepackage{caption}
+\captionsetup{format = hang, margin = 10pt, font = small, labelfont = bf}
+
+% Packages for math
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage{dsfont}
+\usepackage{esint}
+
+% ==================================================
+
+% Packages for writing
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+\usepackage{framed}
+\usepackage{csquotes}
+
+% Citation
+\usepackage[style=numeric, citestyle=ieee]{biblatex}
+\addbibresource{references.bib} % ou o nome que você der ao seu arquivo .bib
+
+% Hyperlinks setup
+\usepackage{hyperref}
+\definecolor{links}{rgb}{0.36,0.54,0.66}
+\hypersetup{
+   colorlinks = true,
+    linkcolor = black,
+     urlcolor = blue,
+    citecolor = blue,
+    filecolor = blue,
+    pdfauthor = {Author},
+     pdftitle = {Title},
+   pdfsubject = {subject},
+  pdfkeywords = {one, two},
+  pdfproducer = {LaTeX},
+   pdfcreator = {pdfLaTeX},
+   }
+
+% Novo comando para definir entre inglês ou português
+\newif\ifenglish\englishfalse
+\englishtrue
+\newcommand{\lang}[2]{\ifenglish#1\else#2\fi}
+
+% ==================================================
+
+% document parameters
+% \usepackage[spanish, mexico, es-lcroman]{babel}
+\englishfalse
+\lang{
+\usepackage[english]{babel}
+\usepackage[margin = 1in]{geometry}}
+{\usepackage[portuguese]{babel}
+\usepackage[margin = 1in]{geometry}}
+
+\newcommand{\DAY}{\the\day}
+\newcommand{\MONTH}{%
+    \ifcase\month
+    \or \lang{January}{janeiro}%
+    \or \lang{February}{fevereiro}%
+    \or \lang{March}{março}%
+    \or \lang{April}{abril}%
+    \or \lang{May}{maio}%
+    \or \lang{June}{junho}%
+    \or \lang{July}{julho}%
+    \or \lang{August}{agosto}%
+    \or \lang{September}{setembro}%
+    \or \lang{October}{outubro}%
+    \or \lang{November}{novembro}%
+    \or \lang{December}{dezembro}%
+    \fi}
+\newcommand{\YEAR}{\the\year}
