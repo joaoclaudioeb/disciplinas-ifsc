@@ -18,31 +18,47 @@ Há alguns vídeos e playlists, listados abaixo, que podem ser úteis para o com
 
 <div align="center">
 
-| [![Curso de circuitos sequenciais](https://img.youtube.com/vi/QDYKsSxGjEk/hqdefault.jpg)](https://www.youtube.com/playlist?list=PLuATe92kV4i7-WWgtqFNqqsaJ_uI8Bt1f) |
+| [![Vídeo sobre modelagem de um detector de sequência, por meio de máquinas de estados finitos, do Me. Rushal Shah](https://img.youtube.com/vi/PbjntQf3sGc/hqdefault.jpg)](https://www.youtube.com/watch?v=PbjntQf3sGc) |
 |:---:|
-| Curso de circuitos sequenciais |
+| Vídeo sobre modelagem de um detector de sequência, por meio de máquinas de estados finitos, do Me. Rushal Shah |
 
 <br>
 
 <div align="center">
 
-| [![Registradores de deslocamento: visão geral](https://img.youtube.com/vi/mZ1VsetNKkY/hqdefault.jpg)](https://youtu.be/mZ1VsetNKkY) |
+| [![Conjunto de vídeos sobre circuitos sequenciais, do Prof. Matheus Pinto](https://img.youtube.com/vi/QDYKsSxGjEk/hqdefault.jpg)](https://www.youtube.com/playlist?list=PLuATe92kV4i7-WWgtqFNqqsaJ_uI8Bt1f) |
 |:---:|
-| Registradores de deslocamento: visão geral |
+| Conjunto de vídeos sobre circuitos sequenciais, do Prof. Matheus Pinto |
 
 <br>
 
-| [![Registradores de deslocamento: Série-Série](https://img.youtube.com/vi/BSTXIec4KV4/hqdefault.jpg)](https://youtu.be/BSTXIec4KV4) | [![Registradores de deslocamento: Série-Paralelo](https://img.youtube.com/vi/U6FP-7Dcd4A/hqdefault.jpg)](https://youtu.be/U6FP-7Dcd4A) |
-|:---:|:---:|
-| Registradores de deslocamento: Série-Série | Registradores de deslocamento: Série-Paralelo |
+<div align="center">
+
+| [![Vídeo sobre registradores de deslocamento, do Prof. Divvela Srinivasa Rao](https://img.youtube.com/vi/mZ1VsetNKkY/hqdefault.jpg)](https://youtu.be/mZ1VsetNKkY) |
+|:---:|
+| Vídeo sobre registradores de deslocamento, do Prof. Divvela Srinivasa Rao |
 
 <br>
 
-| [![Registradores de deslocamento: Paralelo-Série](https://img.youtube.com/vi/BQiKLwI7NgQ/hqdefault.jpg)](https://youtu.be/BQiKLwI7NgQ) | [![Registradores de deslocamento: Paralelo-Paralelo](https://img.youtube.com/vi/L8G4cpqEzM8/hqdefault.jpg)](https://youtu.be/L8G4cpqEzM8) |
+| [![Vídeo sobre registradores do tipo SISO, do Prof. Divvela Srinivasa Rao](https://img.youtube.com/vi/BSTXIec4KV4/hqdefault.jpg)](https://youtu.be/BSTXIec4KV4) | [![Vídeo sobre registradores do tipo SIPO, do Prof. Divvela Srinivasa Rao](https://img.youtube.com/vi/U6FP-7Dcd4A/hqdefault.jpg)](https://youtu.be/U6FP-7Dcd4A) |
 |:---:|:---:|
-| Registradores de deslocamento: Paralelo-Série | Registradores de deslocamento: Paralelo-Paralelo |
+| Vídeo sobre registradores do tipo SISO, do Prof. Divvela Srinivasa Rao | Vídeo sobre registradores do tipo SIPO, do Prof. Divvela Srinivasa Rao |
+
+<br>
+
+| [![Vídeo sobre registradores do tipo PISO, do Prof. Divvela Srinivasa Rao](https://img.youtube.com/vi/BQiKLwI7NgQ/hqdefault.jpg)](https://youtu.be/BQiKLwI7NgQ) | [![Vídeo sobre registradores do tipo PIPO, do Prof. Divvela Srinivasa Rao](https://img.youtube.com/vi/L8G4cpqEzM8/hqdefault.jpg)](https://youtu.be/L8G4cpqEzM8) |
+|:---:|:---:|
+| Vídeo sobre registradores do tipo PISO, do Prof. Divvela Srinivasa Rao | Vídeo sobre registradores do tipo PIPO, do Prof. Divvela Srinivasa Rao |
 
 </div>
+
+---
+
+## Slides
+
+Há alguns slides, também, que podem ser úteis serem avaliados, os quais são listados abaixo.
+
+- Slides sobre máquinas de estados finitos, do Prof. Abel Guilhermino: https://www.cin.ufpe.br/~agsf/disciplinas/sistemas_digitais/aula19_MaquinasEstadosFinitos.pdf
 
 ---
 
