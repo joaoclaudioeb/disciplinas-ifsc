@@ -41,11 +41,9 @@ void vTaskLedControl(void *pvParameters) {
     while (true) {
         TickType_t last_cycle = xTaskGetTickCount();
 
-        raw = adc_read();
-        voltage = raw * conversion_factor;
-        temp_c = 27.0 - (voltage - 0.706) / 0.001721;
+        statechart.raiseGetTemp;
         
-        if (temp_c < 30)
+        if (callback.getTemp() < 30)
             statechart.raiseMinTempEvent();
         if (temp_c > 35)
             statechart.raiseMaxTempEvent();

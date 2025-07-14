@@ -4,3 +4,6 @@
 [submodule "emb22109/projeto/exemplos/os/FreeRTOS"]
 	path = emb22109/projeto/exemplos/os/FreeRTOS
 	url = https://github.com/FreeRTOS/FreeRTOS-Kernel
+[submodule "emb22109/projeto/exemplos/arduino-makefile"]
+	path = emb22109/projeto/exemplos/arduino-makefile
+	url = git@github.com:sudar/Arduino-Makefile.git
