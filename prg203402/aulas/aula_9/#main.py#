@@ -1,0 +1,21 @@
+"""
+ESTRUTURA DO PROJETO:
+aula_9/
+│
+├── main.py
+├── utils/
+│   ├── __init__.py
+│   ├── matematica.py
+│   └── strings.py
+"""
+
+from functions.matematica import soma, quadrado
+from inits.strings import inverte_texto, eh_palindromo
+
+# Usando as funções de matematica.py
+print("Soma:", soma(5, 3))
+print("Quadrado de 4:", quadrado(4))
+
+# Usando as funções de strings.py
+print("Texto invertido:", inverte_texto("Python"))
+print("É palíndromo?", eh_palindromo("ovo"))
