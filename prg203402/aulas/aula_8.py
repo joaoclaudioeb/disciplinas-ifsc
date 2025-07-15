@@ -12,17 +12,19 @@ def parOuImpar(x):
 # ==========================================
 # Função 2 – Função recursiva
 # ==========================================
-def fatorial(numero):
-    if numero == 0:  
-        return 1
-    else:
-        return numero * fatorial(numero - 1)
-
+# def fatorial(numero):
+#     if numero == 0:  
+#         return 1
+#     else:
+#         return numero * fatorial(numero - 1)
+    
 # ==========================================
-# Função 3 – <descrição>
+# Função 3 – Funções concatenadas
 # ==========================================
 
 def fatorial(numero):
+    """ Alguma explicação """
+    
     # Etapa para validar o valor passado
     if not isinstance(numero, int):
         raise TypeError("Desculpa, 'numero' precisa ser do tipo int.")
@@ -34,7 +36,8 @@ def fatorial(numero):
         if numero <= 1:
             return 1
         return numero * fatorial_interno(numero - 1)
-    return fatorial_interno(numero)
+    
+    print("o fatorial de" + str(numero) + "é" + str(fatorial_interno(numero)))
 
 # ==========================================
 # Programa principal
@@ -44,15 +47,16 @@ def fatorial(numero):
 # Uso da função 1
 # ==========================================
 # print(parOuImpar.__doc__) 
-# parOuImpar(2)
+# parOuImpar(7)
 
 # ==========================================
 # Uso da função 2
 # ==========================================
-# print(fatorial(5))
+# print(fatorial(3))
 
 # ==========================================
 # Uso da função 3
 # ==========================================
-# print(fatorial(4))
+print(fatorial.__doc__)
+fatorial(4)
 

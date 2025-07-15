@@ -161,9 +161,9 @@ int main() {
     int valor_busca = 40;
     No* resultado = buscar_ab(raiz, valor_busca);
     if (resultado != NULL) {
-        printf("\n✅ Valor %d encontrado!\n", valor_busca);
+        printf("\n Valor %d encontrado!\n", valor_busca);
     } else {
-        printf("\n❌ Valor %d não encontrado.\n", valor_busca);
+        printf("\n Valor %d não encontrado.\n", valor_busca);
     }
 
     // Removendo elemento

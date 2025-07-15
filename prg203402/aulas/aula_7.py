@@ -8,9 +8,8 @@ def exibir_menu():
     print("Escolha uma opção:")
     print("1 - Celsius para Fahrenheit")
     print("2 - Fahrenheit para Celsius")
-    print("3 - Sair")
+    print("3 - Help")
     print("==============================")
-
 
 # ==========================================
 # Função 2 – Fazer a conversão (com return)

@@ -20,7 +20,7 @@
  */
 
 /* 
- * 🔹 Lomuto Partition:
+ * Lomuto Partition:
  * - Pivô = último elemento
  * - i rastreia a posição de inserção de elementos menores
  * - j percorre o array e compara com o pivô
@@ -53,7 +53,7 @@ int lomutoPartition(int arr[], int low, int high) {
 }
 
 /*
- * 🔸 Hoare Partition:
+ * Hoare Partition:
  * - Pivô = primeiro elemento
  * - i começa à esquerda e avança até encontrar valor ≥ pivô
  * - j começa à direita e recua até encontrar valor ≤ pivô
