@@ -7,3 +7,21 @@
 [submodule "emb22109/projeto/exemplos/arduino-makefile"]
 	path = emb22109/projeto/exemplos/arduino-makefile
 	url = git@github.com:sudar/Arduino-Makefile.git
+[submodule "emb22109/projeto/projetos_de_alunos/jonathan"]
+	path = emb22109/projeto/projetos_de_alunos/jonathan
+	url = git@github.com:jonathanbonette/Homebrew-Temperature-Controller.git
+[submodule "emb22109/projeto/projetos_de_alunos/caio"]
+	path = emb22109/projeto/projetos_de_alunos/caio
+	url = git@github.com:CaioMeira/Sistemas-Embarcados---2025.1.git
+[submodule "emb22109/projeto/projetos_de_alunos/jose"]
+	path = emb22109/projeto/projetos_de_alunos/jose
+	url = git@github.com:Zex1011/brew_master.git
+[submodule "emb22109/projeto/projetos_de_alunos/alexsander"]
+	path = emb22109/projeto/projetos_de_alunos/alexsander
+	url = git@github.com:AlexVieira290/Sistemas-Embarcados-2025.1.git
+[submodule "prg22105/projeto/projetos_de_alunos/ivan"]
+	path = prg22105/projeto/projetos_de_alunos/ivan
+	url = git@github.com:IvanAndreolla/PROG2.git
+[submodule "prg22105/projeto/projetos_de_alunos/pedro"]
+	path = prg22105/projeto/projetos_de_alunos/pedro
+	url = git@github.com:daguerpedro/vendingMachine.git

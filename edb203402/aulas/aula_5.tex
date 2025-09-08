@@ -1,0 +1,277 @@
+% Modelo para apresentação Beamer IFSC
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english,brazil]{babel}
+\usepackage{amsmath, amssymb, graphicx, caption}
+\usepackage{beamerthemeIFSC}
+
+\title{EDB18802 - Eletrônica Digital II:}
+\subtitle{\LARGE Contadores Digitais}
+\author{João Cláudio Elsen Barcellos}
+\date{\scriptsize \the\day~de \ifcase\month\or Janeiro\or Fevereiro\or Março\or Abril\or Maio\or Junho\or Julho\or Agosto\or Setembro\or Outubro\or Novembro\or Dezembro\fi~de \the\year}
+\institute{Engenheiro Eletricista \\ Universidade Federal de Santa Catarina \\ \url{joaoclaudiobarcellos@gmail.com}}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Plano de Aula}
+\tableofcontents
+\end{frame}
+
+\section{Os Tipos de Contadores}
+
+\begin{frame}{Contadores: Lógica Simples vs Lógica Sincronizada}
+\
+
+\begin{itemize}
+  \item Circuitos com e sem clock externo.
+  \item Aplicações simples podem dispensar sincronismo.
+  \item Aplicações complexas exigem controle preciso do tempo.
+  \item Uso de sinal de clock vindo de um oscilador externo.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Contadores: Lógica Simples vs Lógica Sincronizada}
+
+\begin{table}[h!]
+\centering
+\caption{Comparação entre Lógica Simples e Lógica Sincronizada}
+\resizebox{0.9\textwidth}{!}{ % ajuste 0.9 para a escala desejada
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Característica} & \textbf{Lógica Simples (Assíncrona)} & \textbf{Lógica Sincronizada (Síncrona)} \\
+\hline
+Uso de clock            & Não                                  & Sim                                     \\
+\hline
+Complexidade            & Baixa                                & Alta                                    \\
+\hline
+Tempo de resposta       & Imediato                             & Definido pelo clock                     \\
+\hline
+Controle de temporização & Difícil                              & Preciso                                 \\
+\hline
+\end{tabular}
+}
+\end{table}
+
+
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame}{Classificações dos Contadores}
+\begin{itemize}
+  \item \textbf{Quanto ao sincronismo:}
+  \begin{itemize}
+    \item Assíncronos (Ripple Counter)
+    \item Síncronos (Clock comum)
+  \end{itemize}
+  \item \textbf{Quanto ao modo de contagem:}
+  \begin{itemize}
+    \item Progressivos (UP)
+    \item Regressivos (DOWN)
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{Contadores Assíncronos}
+
+\begin{frame}{Contador Assíncrono com Flip-Flops J-K}
+\begin{columns}
+\column{0.4\textwidth}
+\begin{itemize}
+  \item Clock no primeiro estágio.
+  \item Saída Q alimenta o próximo estágio.
+  \item Frequência é dividida por 2 a cada estágio.
+\end{itemize}
+\column{0.6\textwidth}
+\includegraphics[width=0.95\columnwidth]{figures/contador_ass.png}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Diagrama de Tempo: Contador Assíncrono 3 bits}
+\centering
+\includegraphics[width=0.8\columnwidth]{figures/diagrama_tempo.png}
+\end{frame}
+
+\begin{frame}{Contador Decrescente (Assíncrono)}
+\begin{columns}
+\column{0.4\textwidth}
+\begin{itemize}
+  \item Uso das saídas \texttt{\textbackslash Q}.
+  \item Contagem de 7 até 0.
+\end{itemize}
+\column{0.6\textwidth}
+\includegraphics[width=0.85\columnwidth]{figures/cont_decr_ass.png}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Capacidade Máxima de Contagem}
+\begin{itemize}
+  \item Fórmula: \( n = 2^x \)
+  \item \( x \) = número de flip-flops
+  \item Exemplo: 4 flip-flops \(\Rightarrow\) \( 2^4 = 16 \) (0 a 15)
+\end{itemize}
+\end{frame}
+
+\section{Contagem Programada}
+
+\begin{frame}{Redefinindo o Ciclo de Contagem}
+\begin{itemize}
+  \item Limitação: contagem natural até potências de 2.
+  \item Solução: uso de entradas CLEAR ou PRESET.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Contador Programado com Clear}
+\begin{columns}
+\column{0.4\textwidth}
+\begin{itemize}
+  \item RESET ao detectar combinação específica.
+  \item Uso de porta lógica ligada às saídas.
+\end{itemize}
+\column{0.6\textwidth}
+\includegraphics[width=0.9\columnwidth]{figures/cont_clear.png}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Contador Programado com Preset}
+\centering
+\includegraphics[width=0.8\columnwidth]{figures/cont_pres.png}
+\end{frame}
+
+\section{Contadores Up/Down}
+
+\begin{frame}{Contador UP/DOWN}
+\begin{columns}
+\column{0.4\textwidth}
+\begin{itemize}
+  \item Entrada seletora define o modo de contagem.
+  \item Uso de saídas Q ou \textbackslash Q para alterar direção.
+\end{itemize}
+\column{0.6\textwidth}
+\includegraphics[width=0.8\columnwidth]{figures/up_down.png}
+\end{columns}
+\end{frame}
+
+\section{Contadores Síncronos}
+
+\begin{frame}{Contadores com Clock Único}
+\begin{itemize}
+  \item Todos os flip-flops recebem o mesmo clock.
+  \item Velocidade independe do número de estágios.
+\end{itemize}
+\centering
+\includegraphics[width=0.8\columnwidth]{figures/clock_unico.png}
+\end{frame}
+
+\begin{frame}{Problemas e Soluções}
+\begin{itemize}
+  \item Crescimento de portas lógicas com mais estágios.
+  \item Alternativa: topologia ripple carry síncrona.
+\end{itemize}
+\end{frame}
+
+\section{Contadores Síncronos Programáveis}
+
+\begin{frame}{Programando a Contagem Síncrona}
+\begin{itemize}
+  \item Reset ao detectar configuração desejada.
+  \item Uso de portas AND ou NAND.
+\end{itemize}
+\centering
+\includegraphics[width=0.6\columnwidth]{figures/cont_prog_sinc.png}
+\end{frame}
+
+\section{Contadores TTL}
+
+\begin{frame}{CI TTL 7490 – Contador de Década}
+\centering
+\includegraphics[width=0.4\columnwidth]{figures/7490.png}
+\end{frame}
+
+\begin{frame}{Modo BCD – 7490}
+\centering
+\includegraphics[width=0.4\columnwidth]{figures/bcd_7490.png}
+\end{frame}
+
+\begin{frame}{Modo Divisor por 10 – 7490}
+\centering
+\includegraphics[width=0.4\columnwidth]{figures/div_10.png}
+\end{frame}
+
+\begin{frame}{Outros CIs TTL: 7492, 7493, 74190}
+\centering
+\includegraphics[width=0.5\columnwidth]{figures/7492.png}
+
+\end{frame}
+
+\begin{frame}{Outros CIs TTL: 7492, 7493, 74190}
+\centering
+\includegraphics[width=0.6\columnwidth]{figures/7473.png}
+
+\end{frame}
+
+\begin{frame}{Outros CIs TTL: 7492, 7493, 74190}
+\centering
+\includegraphics[width=0.6\columnwidth]{figures/74190.png}
+
+\end{frame}
+
+\section{Contadores e Divisores CMOS}
+
+\begin{frame}{CI CMOS 4017}
+\centering
+\includegraphics[width=0.8\columnwidth]{figures/4017.png}
+\end{frame}
+
+\begin{frame}{CI CMOS 4018}
+\centering
+\includegraphics[width=0.5\columnwidth]{figures/4018.png}
+\end{frame}
+
+\section{Aplicações e Exercício}
+
+\begin{frame}{Aplicações dos Contadores}
+\begin{itemize}
+  \item Armazenamento e controle de tempo.
+  \item Sequenciamento de eventos.
+  \item Conversão entre domínios (freq./tensão).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Exercício}
+\begin{itemize}
+  \item Elabore o circuito de um contador programado que conta de 0 a 5.
+  \item Esboce o circuito com a porta lógica apropriada para RESET.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Prática}
+\begin{itemize}
+  \item Monte um contador de 3 bits.
+  \item Utilizar CI 7476.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Prática}
+\centering
+\includegraphics[width=0.8\columnwidth]{figures/CONT_PRA.png}
+\end{frame}
+
+\begin{frame}{Referências}
+\begin{itemize}
+  \item Newton C. Braga. Curso de Eletrônica – Eletrônica Digital.
+  \item Datasheets dos CIs TTL e CMOS mencionados.
+\end{itemize}
+\end{frame}
+
+\end{document}
