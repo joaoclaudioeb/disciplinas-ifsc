@@ -1,0 +1,58 @@
+\input{../../latex/preamble}
+\input{../../latex/format}
+\input{../../latex/commands}
+
+\usepackage[style=numeric, citestyle=ieee]{biblatex}
+\addbibresource{references.bib}
+
+\begin{document}
+
+\begin{Large}
+    \textbf{AOP18803 --- Amplificadores Operacionais}
+    
+    Atividade 3 --- Amplificador somador \hfill \lang{}{\DAY~de \MONTH~de \YEAR}
+\end{Large}
+
+\vspace{1ex}
+\textbf{\lang{Lecturer:}{Professor:}} \text{João Cláudio Elsen Barcellos}, \href{mailto:joao.barcellos@ifsc.edu.br}{\texttt{joao.barcellos@ifsc.edu.br}}\\
+\textbf{\lang{Student:}{Estudante:}}
+
+\vspace{2ex}
+
+\begin{problem}{Análise do amplificador somador (topologia inversora)}{pr1}
+
+Considerando o circuito abaixo: \\
+    
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{./figures/sum_opamp.png}
+\end{center}
+
+\textbf{a)} Calcule o valor de pico de V\textsubscript{o}, se a tensão de pico-a-pico de V\textsubscript{i} for de \SI{2}{\volt} (V\textsubscript{i} é um sinal senoidal, com frequência de \SI{1}{\kilo\hertz}). \\
+
+\textbf{b)} Desenhe, num mesmo gráfico, V\textsubscript{o} e V\textsubscript{i}. \\
+
+\end{problem}
+
+\begin{problem}{Simulação}{pr2}
+
+Monte o circuito da questão anterior no LTSpice e verifique se o funcionamento corresponde ao que foi feito na questão anterior. Obs.: use o LT1492, para o amplificador operacional. \\
+
+\end{problem}
+
+\begin{problem}{Montagem}{pr3}
+
+Agora, tente montar em bancada, utilizando o LM741, a fonte de bancada e o gerador de sinais. Verifique se o resultado é similar ao que foi obtido ao longo das outras questões. \\
+
+\end{problem}
+
+\begin{obs}
+
+Deve-se fazer um relatório contendo os elementos essenciais: \textit{1)} introdução com contextualização; \textit{2)} objetivos; \textit{3)} descrição dos materiais e métodos adotados; \textit{4)} resultados apresentados de forma organizada (e.g., por meio de tabelas, figuras, quando aplicável); \textit{5)} discussões com interpretações quanto aos resultados; \textit{6)} e as conclusões para sintetizar as principais descobertas e aprendizados.
+
+\end{obs}
+
+\newpage
+
+\printbibliography
+
+\end{document}
