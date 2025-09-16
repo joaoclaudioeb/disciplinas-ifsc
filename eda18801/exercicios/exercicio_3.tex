@@ -10,7 +10,7 @@
 \begin{Large}
     \textbf{EDA18801 --- Eletrônica Digital I}
     
-    Atividade 2 --- Portas lógicas \hfill \lang{}{\DAY~de \MONTH~de \YEAR}
+    Atividade 3 --- Funções lógicas \hfill \lang{}{\DAY~de \MONTH~de \YEAR}
 \end{Large}
 
 \vspace{1ex}
@@ -19,22 +19,52 @@
 
 \vspace{2ex}
 
-\begin{problem}{Análise de circuitos lógicos}{pr1}
+%%%% PR1
+\begin{problem}{Dedução de circuitos lógicos}{pr1}
 
-Monte a tabela verdade, bem como descubra a função lógica do circuito abaixo: \\
-    
+Comsiderando a tabela verdade abaixo: \\
+
 \begin{center}
-    \includegraphics[width=0.7\textwidth]{./figures/circuito_logico_logisim.png}
+    \begin{tabular}{| c | c | c | c |}
+      \hline
+      \rowcolor{Gray}
+      A & B & C & S \\
+      \hline
+      0 & 0 & 0 & 0 \\
+      0 & 0 & 1 & 0 \\
+      0 & 1 & 0 & 0 \\
+      0 & 1 & 1 & 1 \\
+      1 & 0 & 0 & 0 \\
+      1 & 0 & 1 & 1 \\
+      1 & 1 & 0 & 1 \\
+      1 & 1 & 1 & 1 \\
+      \hline
+    \end{tabular}
 \end{center}
+
+\textbf{a)} Primeiramente, descreva o que este circuito faz, apenas analisando a sua tabela verdade. \\
+
+\textbf{a)} Descubra a função lógica que descreve o funcionamento deste circuito lógico, utilizando, por exemplo, o método da soma de produtos (SdP). \\
+
+\textbf{b)} Desenhe o circuito lógico. \\
 
 \end{problem}
 
+%%%% PR2
 \begin{problem}{Simulação}{pr2}
 
 Monte o circuito da questão anterior no Logisim e verifique se o funcionamento corresponde ao que foi feito na questão anterior. \\
 
 \end{problem}
 
+%%%% PR3
+\begin{problem}{Montagem}{pr3}
+    
+Depois de resolvido o circuito anterior, monte o circuito, usando os CIs adequados, no \textit{Digital Electronics Trainer Kit (DTK-08)} do laboratório.
+
+\end{problem}
+
+%%%% OBS
 \begin{obs}
 
 Deve-se fazer um relatório contendo os elementos essenciais: \textit{1)} introdução com contextualização; \textit{2)} objetivos; \textit{3)} descrição dos materiais e métodos adotados; \textit{4)} resultados apresentados de forma organizada (e.g., por meio de tabelas, figuras, quando aplicável); \textit{5)} discussões com interpretações quanto aos resultados; \textit{6)} e as conclusões para sintetizar as principais descobertas e aprendizados.
