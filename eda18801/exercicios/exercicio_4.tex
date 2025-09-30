@@ -1,0 +1,78 @@
+\input{../../latex/preamble}
+\input{../../latex/format}
+\input{../../latex/commands}
+
+\usepackage[style=numeric, citestyle=ieee]{biblatex}
+\addbibresource{references.bib}
+
+\begin{document}
+
+\begin{Large}
+    \textbf{EDA18801 --- Eletrônica Digital I}
+    
+    Atividade 4 --- Mapa de Karnaugh \hfill \lang{}{\DAY~de \MONTH~de \YEAR}
+\end{Large}
+
+\vspace{1ex}
+\textbf{\lang{Lecturer:}{Professor:}} \text{João Cláudio Elsen Barcellos}, \href{mailto:joao.barcellos@ifsc.edu.br}{\texttt{joao.barcellos@ifsc.edu.br}}\\
+\textbf{\lang{Student:}{Estudante:}}
+
+\vspace{2ex}
+
+%%%% PR1
+\begin{problem}{Dedução de circuitos lógicos}{pr1}
+
+Comsiderando a tabela verdade abaixo: \\
+
+\begin{center}
+    \begin{tabular}{| c | c | c | c |}
+      \hline
+      \rowcolor{Gray}
+      S & A & B & Q \\
+      \hline
+      0 & 0 & 0 & 0 \\
+      0 & 0 & 1 & 0 \\
+      0 & 1 & 0 & 1 \\
+      0 & 1 & 1 & 1 \\
+      1 & 0 & 0 & 0 \\
+      1 & 0 & 1 & 1 \\
+      1 & 1 & 0 & 0 \\
+      1 & 1 & 1 & 1 \\
+      \hline
+    \end{tabular}
+\end{center}
+
+\textbf{a)} Primeiramente, descreva o que este circuito faz, apenas analisando a sua tabela verdade. \\
+
+\textbf{a)} Descubra a função lógica que descreve o funcionamento deste circuito lógico, utilizando, o mapa de Karnaugh. \\
+
+\textbf{b)} Desenhe o circuito lógico. \\
+
+\end{problem}
+
+%%%% PR2
+\begin{problem}{Simulação}{pr2}
+
+Monte o circuito da questão anterior no Logisim e verifique se o funcionamento corresponde ao que foi feito na questão anterior. \\
+
+\end{problem}
+
+%%%% PR3
+\begin{problem}{Montagem}{pr3}
+    
+Depois de resolvido o circuito anterior, ``programe-o'' no \textit{DE10-Lite Development and Education Board} do laboratório.
+
+\end{problem}
+
+%%%% OBS
+\begin{obs}
+
+Deve-se fazer um relatório contendo os elementos essenciais: \textit{1)} introdução com contextualização; \textit{2)} objetivos; \textit{3)} descrição dos materiais e métodos adotados; \textit{4)} resultados apresentados de forma organizada (e.g., por meio de tabelas, figuras, quando aplicável); \textit{5)} discussões com interpretações quanto aos resultados; \textit{6)} e as conclusões para sintetizar as principais descobertas e aprendizados.
+
+\end{obs}
+
+\newpage
+
+\printbibliography
+
+\end{document}
