@@ -1,0 +1,56 @@
+\input{../../latex/preamble}
+\input{../../latex/format}
+\input{../../latex/commands}
+
+\usepackage[style=numeric, citestyle=ieee]{biblatex}
+\addbibresource{references.bib}
+
+\begin{document}
+
+\begin{Large}
+    \textbf{AOP18803 --- Amplificadores Operacionais}
+    
+    Atividade 4 --- Não idealidades: frequência \hfill \lang{}{\DAY~de \MONTH~de \YEAR}
+\end{Large}
+
+\vspace{1ex}
+\textbf{\lang{Lecturer:}{Professor:}} \text{João Cláudio Elsen Barcellos}, \href{mailto:joao.barcellos@ifsc.edu.br}{\texttt{joao.barcellos@ifsc.edu.br}}\\
+\textbf{\lang{Student:}{Estudante:}}
+
+\vspace{2ex}
+
+\begin{problem}{Análise do impacto da frequência}{pr1}
+
+Considerando o circuito abaixo: \\
+    
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{./figures/freq_test.png}
+\end{center}
+
+\textbf{a)} Calcule o valor de pico de V\textsubscript{o}, se a tensão de pico-a-pico de V\textsubscript{i} for de \SI{2}{\volt} (V\textsubscript{i} é um sinal senoidal, sua frequência não será considerada). \\
+
+\textbf{b)} Desenhe, num mesmo gráfico, V\textsubscript{o} e V\textsubscript{i}. \\
+
+\end{problem}
+
+\begin{problem}{Montagem}{pr2}
+
+Agora, tente montar em bancada, utilizando o LM741, a fonte de bancada e o gerador de sinais. No entando, faça o teste com V\textsubscript{i}:
+
+\textbf{a)} Sendo um sinal senoidal, com pico-a-pico de \SI{2}{\volt} e frequência de \SI{10}{\hertz}. Qual a tensão de pico-a-pico de V\textsubscript{o}? \\
+\textbf{b)} Sendo um sinal senoidal, com pico-a-pico de \SI{2}{\volt} e frequência de \SI{100}{\kilo\hertz}. Qual a tensão de pico-a-pico de V\textsubscript{o}? \\
+\textbf{c)} Sendo um sinal senoidal, com pico-a-pico de \SI{2}{\volt} e frequência de \SI{1}{\mega\hertz}. Qual a tensão de pico-a-pico de V\textsubscript{o}? \\
+
+\end{problem}
+
+\begin{obs}
+
+Deve-se fazer um relatório contendo os elementos essenciais: \textit{1)} introdução com contextualização; \textit{2)} objetivos; \textit{3)} descrição dos materiais e métodos adotados; \textit{4)} resultados apresentados de forma organizada (e.g., por meio de tabelas, figuras, quando aplicável); \textit{5)} discussões com interpretações quanto aos resultados; \textit{6)} e as conclusões para sintetizar as principais descobertas e aprendizados.
+
+\end{obs}
+
+\newpage
+
+\printbibliography
+
+\end{document}
